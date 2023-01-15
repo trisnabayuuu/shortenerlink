@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 
-// instantiate a mongoose schema
 const URLSchema = new mongoose.Schema({
     urlCode: String,
     longUrl: String,
@@ -11,5 +10,5 @@ const URLSchema = new mongoose.Schema({
     }
 })
 
-// create a model from schema and export it
+// membuat skema model
 module.exports = mongoose.model('Url', URLSchema)
