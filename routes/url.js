@@ -7,7 +7,7 @@ const shortid = require('shortid')
 const router = express.Router()
 
 const Url = require('../models/urlModel')
-const baseUrl = 'http:localhost:5000'
+const baseUrl = 'http://localhost:5000'
 
 router.post('/shorten', async (req, res) => {
     const {
