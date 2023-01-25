@@ -1,4 +1,4 @@
-// import mongoose package
+// import mongoose packageiiiiii
 const mongoose = require('mongoose')
 const DB_URI = 'mongodb://127.0.0.1:27017'
 
