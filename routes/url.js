@@ -7,7 +7,11 @@ const shortid = require('shortid')
 const router = express.Router()
 
 const Url = require('../models/urlModel')
+<<<<<<< Updated upstream
 const base = 'http://localhost:5000'
+=======
+const baseUrl = 'http://localhost:5000'
+>>>>>>> Stashed changes
 
 router.post('/shorten', async (req, res) => {
     const {

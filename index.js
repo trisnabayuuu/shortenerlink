@@ -39,7 +39,7 @@ app.use(express.json({
     extended: false
 })) 
 app.use('/', require('./routes/redirect'))
-app.use('/api/url', require('./routes/url'))
+app.use('/', require('./routes/url'))
 
 app.listen(port, () => {
     console.log(`cli-nodejs-api listening at http://127.0.0.1:${port}`)

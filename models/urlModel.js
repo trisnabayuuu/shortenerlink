@@ -9,6 +9,4 @@ const URLSchema = new mongoose.Schema({
         default: Date.now
     }
 })
-
-// membuat skema model
 module.exports = mongoose.model('Url', URLSchema)
