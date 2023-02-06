@@ -4,23 +4,32 @@ const router = express.Router()
 
 const Url = require('../models/urlModel')
 
+router.get('/', async (req, res) => {
+    
+    res.send('index',)
+    })
 router.get('/:code', async (req, res) => {
-    try {
         const url = await Url.findOne({
-            urlCode: req.params.code
+            
+            urlCode: req.params.code,
+            
         })
-        if (url) {
-            return res.redirect(url.longUrl)
-        } else {
-            return res.status(404).json('No URL Found')
+            
+        if (url == null) return res.sendStatus(404)
+
+        url.clicks++
+        Url.save()
+
+        res.redirect(url.full)
         }
 
-    }
-    catch (err) {
-        console.error(err)
-        res.status(500).json('Server Error')
-    }
-})
+
+    
+    // catch (err) {
+    //     console.error(err)
+    //     res.status(500).json('Server Error')
+    // }
+)
 
 
 module.exports = router

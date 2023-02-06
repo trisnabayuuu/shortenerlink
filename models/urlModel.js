@@ -7,6 +7,11 @@ const URLSchema = new mongoose.Schema({
     date: {
         type: String,
         default: Date.now
+    },
+    clicks:{
+        type: Number,
+        required: true,
+        default: 0
     }
 })
 module.exports = mongoose.model('Url', URLSchema)

@@ -25,6 +25,8 @@ const app = express();
 const cors = require('cors');
 const port = 5000;
 
+// const dotenv = require('DOTENV')
+
 app.use(cors({
     origin: "http://127.0.0.1:5173",
 }))
@@ -40,7 +42,7 @@ app.use(express.json({
 })) 
 app.use('/', require('./routes/redirect'))
 app.use('/', require('./routes/url'))
-app.use('/', require('./routes/user'))
+app.use('/auth', require('./routes/auth'))
 
 app.listen(port, () => {
     console.log(`cli-nodejs-api listening at http://127.0.0.1:${port}`)

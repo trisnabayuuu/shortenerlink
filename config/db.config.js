@@ -6,7 +6,8 @@ mongoose.set('strictQuery', false);
 
 mongoose.connect(DB_URI, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    // useCreateIndex: true
 })
 
 const connection = mongoose.connection

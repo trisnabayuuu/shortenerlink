@@ -7,7 +7,10 @@ const shortid = require('shortid')
 const router = express.Router()
 
 const Url = require('../models/urlModel')
+const { route } = require('./auth')
 const baseUrl = 'http://localhost:5000'
+
+
 
 router.post('/shorten', async (req, res) => {
     const { longUrl } = req.body 
@@ -24,7 +27,7 @@ router.post('/shorten', async (req, res) => {
             if (url) {
                 res.json(url)
             } else {
-                const shortUrl = base + '/' + urlCode
+                const shortUrl = baseUrl + '/' + urlCode
                 url = new Url({
                     longUrl,
                     shortUrl,
